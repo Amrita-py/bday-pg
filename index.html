@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SCREEN 1: WELCOME SCREEN -->
+    <section class="screen" id="welcome">
+        <div class="welcome">
+            <p class="small-text">Annyeonghaseyo Prayose Gorai</p>
+            <h1>I have tried to<br>prepare something<br>for you.</h1>
+            <p class="wait-text">
+                Gajaa~ !! 🚀
+            </p>
+            <button onclick="showIntro()">
+                Open 🛫
+            </button>
+        </div>
+    </section>
+    
+    <!-- SCREEN 2: INTRODUCTORY SCREEN -->
+    <section class="screen hidden" id="intro">
+        <div class="welcome">
+            <p class="small-text">Welcome :)✨</p>
+            <h1>A quick note<br>before you begin...</h1>
+            <p class="wait-text">
+                This space holds a collection of my admiring power lol & thoughts made just for you in occassion of your birthday.<br> Take your time reviewing each one! 🌸
+            </p>
+            <div class="button-group">
+                <button class="secondary-btn" onclick="backToWelcome()">⬅️ Back</button>
+                <button onclick="showGallery()">Explore Your Moments but in my POV 📸</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN 3: PHOTO GALLERY -->
+    <section class="screen hidden" id="gallery">
+        <div class="gallery-content">
+            <p class="small-text">Wanted to showcase how you're..!</p>
+            <h1>💡Flip each photos 📸</h1>
+            
+            <div class="photo-grid">
+                <!-- PHOTO 1 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="birthday-prayo/images/unnamed.jpg" alt="Memory 1">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="photo-caption">I used to think the person who's clicking the photos must be very lucky. Guess who's the luckiest! ✨</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHOTO 2 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="birthday-prayo/images/1000133082.jpg" alt="Memory 2">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="photo-caption">Effortlessly Angelic 🌸</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHOTO 3 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="birthday-prayo/images/1000133083.jpg" alt="Memory 3">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="photo-caption">Swarg se utri huyi pari as I always said straight outta fairytale 💫</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHOTO 4 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="birthday-prayo/images/1000133084.jpg" alt="Memory 4">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="photo-caption">Apka, the only smile which is recognisable nd noticeable in a room full of strangers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHOTO 5 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="birthday-prayo/images/1000133118.jpg" alt="Memory 5">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="photo-caption">The Ultimateee Intoxication 💖 (Middle pic SHEESHHH)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHOTO 6 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="birthday-prayo/images/1000133119.jpg" alt="Memory 6">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="photo-caption">Magician fr. Because I used to dislike pink.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHOTO 7 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="birthday-prayo/images/cute.png" alt="Memory 7">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="photo-caption">Afterall baccha meye e toh! Pookiee! 🎀</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GALLERY BUTTON GROUP -->
+            <div class="button-group">
+                <button class="secondary-btn" onclick="backToIntro()">⬅️ Back</button>
+                
+                <!-- NON-CLICKABLE CAPTION BADGE BUTTON -->
+                <button class="info-btn" disabled> Can't remark your baddie version cause its unparalleled</button>
+                
+                <button onclick="showBirthday()">There's more... ✨</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN 4: BIRTHDAY SCREEN -->
+    <section class="screen hidden" id="birthday">
+        <div class="birthday-content">
+            <p class="small-text">And finally...</p>
+            <h1>Happy Birthday Prayo 🎂</h1>
+            <p>
+                Happy 22nd! I hope this year brings you endless<br>
+                haha-hehe, love, clarity and success.<br>
+                May you excel equally both in your academics and your<br>
+                fashion sphere 🌟<br>
+                I would fkn love to visit your shows. Do invite me fr surely!
+
+            </p>
+            <div class="button-group">
+                <button class="secondary-btn" onclick="backToGallery()">⬅️ Back</button>
+                <button onclick="showMessage()">Exit But Not Exit ✨</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN 5: MESSAGE SCREEN -->
+    <section class="screen hidden" id="message">
+        <div class="birthday-content">
+            <h1>Directors & Producers</h1>
+            <p>
+                Google Gemini & Chrome helped me a lot in making this.<br>
+                <br>
+                Meet me asap. Your post birthday gift will be waiting for you.
+            </p>
+            <div class="button-group">
+                <button class="secondary-btn" onclick="backToBirthday()">⬅️ Back</button>
+                <button onclick="exitSite()">Cya Soon! 🛬</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

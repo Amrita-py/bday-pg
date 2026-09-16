@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+.screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.welcome,
+.birthday-content {
+    max-width: 700px;
+    animation: fadeIn 1.5s ease;
+}
+
+.small-text {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #bbbbbb;
+}
+
+h1 {
+    font-size: 55px;
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.wait-text {
+    color: #aaaaaa;
+    font-size: 18px;
+    margin: 25px 0;
+}
+
+.birthday-content p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #dddddd;
+}
+
+button {
+    margin-top: 25px;
+    padding: 15px 32px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4f81;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* BUTTON GROUPS */
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.button-group button {
+    margin-top: 0;
+}
+
+button.secondary-btn {
+    background: #333333;
+    color: #cccccc;
+}
+
+button.secondary-btn:hover {
+    background: #444444;
+    color: #ffffff;
+}
+
+/* NON-CLICKABLE RED BADGE BUTTON */
+button.info-btn {
+    background: #e63946;          /* Red background */
+    color: #ffffff;                 /* White text */
+    border: 1px solid #ff4d5a;      /* Matching bright border */
+    cursor: default !important;
+    pointer-events: none;
+    user-select: none;
+    padding: 15px 24px;
+}
+
+button.info-btn:hover {
+    transform: none !important;
+    background: #e63946 !important; /* Keep red color on hover */
+}
+
+/* PHOTO GALLERY (HORIZONTAL SCROLL STRIP WITH 3D FLIP CARDS) */
+.gallery-content {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    animation: fadeIn 1.5s ease;
+}
+
+.photo-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 10px;
+    margin: 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.photo-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.photo-grid::-webkit-scrollbar-thumb {
+    background: #ff4f81;
+    border-radius: 10px;
+}
+
+/* 3D FLIP CARD CONTAINER */
+.flip-card {
+    flex: 0 0 auto;
+    width: 240px;
+    height: 260px;
+    perspective: 1000px;
+    cursor: pointer;
+    scroll-snap-align: center;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* FLIP TRIGGER (Hover & Click) */
+.flip-card:hover .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* FRONT & BACK SIDES */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.flip-card-front {
+    background: #1a1a1a;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.flip-card-back {
+    background: #1e1e24;
+    border: 2px solid #ff4f81;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.photo-caption {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 34px;
+        margin: 10px 0;
+    }
+
+    .small-text {
+        font-size: 14px;
+    }
+
+    .birthday-content p {
+        font-size: 16px;
+    }
+
+    .screen {
+        padding: 15px;
+    }
+
+    .photo-grid {
+        gap: 8px;
+    }
+
+    .flip-card {
+        width: 180px;
+        height: 210px;
+    }
+
+    .photo-caption {
+        font-size: 14px;
+    }
+}
