@@ -168,8 +168,7 @@ button.info-btn:hover {
     transform-style: preserve-3d;
 }
 
-/* FLIP TRIGGER (Hover & Click) */
-.flip-card:hover .flip-card-inner,
+/* FIXED: FLIP ONLY TRIGGERED BY CLICK / TAP CLASS */
 .flip-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
